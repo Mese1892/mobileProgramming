@@ -1,4 +1,4 @@
-# mobileApplications
+#Mobile Applications
 Student: Mesesan Andrei-Catalin
 Group:935/1
 Prof: Lect. Dr. Cojocar Dan
