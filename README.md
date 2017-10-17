@@ -1,4 +1,4 @@
-#Mobile Applications
+#MobileApplications
 
 
 Student: Mesesan Andrei-Catalin
