@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/teamlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teamlabel"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/managerlabel"
+        android:layout_toEndOf="@+id/managerlabel"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/stadiumlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stadium"
+        android:layout_alignBottom="@+id/stadium"
+        android:text="@string/stadiumlabel"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/stadium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/team"
+        android:layout_alignLeft="@+id/team"
+        android:layout_alignStart="@+id/team"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/managerlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/managerlabel"
+        android:textSize="24sp"
+        android:layout_alignTop="@+id/manager"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:id="@+id/manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/stadium"
+        android:layout_alignLeft="@+id/stadium"
+        android:layout_alignStart="@+id/stadium" />
+    <Button
+        android:id="@+id/SaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_marginTop="122dp"
+        android:layout_below="@+id/manager"
+        android:layout_alignLeft="@+id/team"
+        android:layout_alignStart="@+id/team" />
+
+
+
+</RelativeLayout>

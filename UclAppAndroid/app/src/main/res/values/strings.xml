@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="teamlabel">Team: </string>
+    <string name="stadiumlabel">Stadium: </string>
+    <string name="managerlabel">Manager: </string>
+    <string name="save">Save</string>
+    <string name="send_email">Send email</string>
+    <string name="someone_email_com">someone@email.com</string>
+    <string name="e_mail">E-mail</string>
+    <string name="favourite_teams">Favourite teams</string>
+</resources>
