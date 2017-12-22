@@ -1,6 +1,6 @@
 package com.home.cata.uclappandroid.repository;
 
-import com.home.cata.uclappandroid.model.Team;
+import com.home.cata.uclappandroid.entities.Team;
 
 import java.util.List;
 

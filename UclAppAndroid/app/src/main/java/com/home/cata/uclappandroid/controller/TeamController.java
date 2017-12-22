@@ -1,21 +1,29 @@
 package com.home.cata.uclappandroid.controller;
 
-import com.home.cata.uclappandroid.model.Team;
-import com.home.cata.uclappandroid.repository.TeamRepository;
+import com.home.cata.uclappandroid.AppDatabase;
+import com.home.cata.uclappandroid.entities.Team;
 
 import java.util.List;
 
 /**
- * Created by Cata on 10/29/2017.
+ * Created by Catalin on 12/19/2017.
  */
 
 public class TeamController {
-    private TeamRepository teamRepository;
 
-    public TeamController(TeamRepository teamRepository) {
-        this.teamRepository = teamRepository;
+    private AppDatabase db;
+
+
+    public List<Team> getAll() {
+        return db.teamDao().getAll();
     }
-    public List<Team> getAll(){
-       return this.teamRepository.getAll();
+
+    public long save(String name, String stadium, String group, String managerName) {
+
+        Long id= db.managerDao().findByName(managerName);
+
+        Team t= new Team(name, stadium,group,id);
+
+        return db.teamDao().insert(t);
     }
 }

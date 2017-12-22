@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.home.cata.uclappandroid.model.Manager;
-import com.home.cata.uclappandroid.model.Team;
-import com.home.cata.uclappandroid.repository.TeamRepository;
-
 /**
  * Created by Cata on 10/29/2017.
  */
@@ -22,7 +18,6 @@ public class SingleItemView extends Activity {
     EditText txtStadium;
     EditText txtManager;
     Button save;
-    TeamRepository repository;
 
     String [] teams=new String [100];
     String [] managers=new String [100];
@@ -58,14 +53,6 @@ public class SingleItemView extends Activity {
                 String newTeamName=txtTeam.getText().toString();
                 String newStadium= txtStadium.getText().toString();
                 String newManager= txtManager.getText().toString();
-                Manager m= new Manager();
-                m.setName(newManager);
-                Team t1= new Team(newTeamName,newStadium,"unseeded",m);
-                Team find= repository.findByName(newTeamName);
-                find.setName(newTeamName);
-                find.setStadium(newStadium);
-                find.setManager(m);
-                repository.save(find);
                 teams[position]=newTeamName;
                 stadiums[position]=newStadium;
                 managers[position]=newManager;
