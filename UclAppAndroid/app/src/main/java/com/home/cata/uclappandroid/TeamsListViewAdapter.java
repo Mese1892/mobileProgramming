@@ -1,63 +1,61 @@
 package com.home.cata.uclappandroid;
 
-import android.content.Context;
+import android.app.Activity;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.home.cata.uclappandroid.entities.Team;
+
+import java.util.List;
 
 /**
  * Created by Cata on 10/29/2017.
  */
 
-public class TeamsListViewAdapter extends BaseAdapter {
-    Context context;
-    String[] teams=new String [100];
-    String[] stadiums=new String [100];
-    String[] managers=new String [100];
-    LayoutInflater inflater;
+public class TeamsListViewAdapter extends ArrayAdapter<Team> {
+    private Activity context;
+    private List<Team> teams;
+    private static LayoutInflater inflater;
 
-    public TeamsListViewAdapter(Context context, String[] teams, String[] stadiums, String[] managers) {
-        this.context = context;
-        this.teams = teams;
-        this.stadiums = stadiums;
-        this.managers = managers;
+    public TeamsListViewAdapter(Activity context, List<Team> teams) {
+        super(context,0,teams);
+        try{
+            this.context=context;
+            this.teams=teams;
+            inflater=context.getLayoutInflater();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public int getCount(){
+        return teams.size();
     }
 
-    @Override
-    public int getCount() {
-        return teams.length;
+    public Team getItem(Team position){
+        return position;
     }
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
+
 
     @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         TextView txtTeam;
-        TextView txtStadium;
-        TextView txtManager;
+        View newView=convertView;
+        Team t= getItem(position);
+        if(convertView ==null){
+            newView=inflater.inflate(R.layout.listview_item,null);
 
-        inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+        newView.setTag(t.getName());
+        txtTeam=(TextView) newView.findViewById(R.id.teamlabel);
+        txtTeam.setText(t.getName());
 
-        View itemView= inflater.inflate(R.layout.listview_item,parent,false);
-
-        txtTeam=(TextView) itemView.findViewById(R.id.teamlabel);
-       // txtStadium=(TextView) itemView.findViewById(R.id.stadiumlabel);
-        //txtManager=(TextView) itemView.findViewById(R.id.managerlabel);
-
-        txtTeam.setText(teams[position]);
-       // txtStadium.setText(stadiums[position]);
-       // txtManager.setText(managers[position]);
-
-        return itemView;
+        return newView;
     }
 }

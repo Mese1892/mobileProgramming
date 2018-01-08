@@ -1,7 +1,7 @@
 package com.home.cata.uclappandroid.entities;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+
+import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.Random;
 
@@ -9,14 +9,15 @@ import java.util.Random;
  * Created by Cata on 10/29/2017.
  */
 
-@Entity
+@IgnoreExtraProperties
 public class Manager {
 
-    @PrimaryKey
     private Long id;
     private String name;
     private Integer age;
 
+    public Manager() {
+    }
 
     public Manager(String name, Integer age) {
         Random rnd= new Random();

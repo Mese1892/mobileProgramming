@@ -1,10 +1,7 @@
 package com.home.cata.uclappandroid.entities;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.PrimaryKey;
+
+import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.Random;
 
@@ -12,30 +9,31 @@ import java.util.Random;
  * Created by Cata on 10/29/2017.
  */
 
-
-@Entity(foreignKeys = @ForeignKey(entity = Manager.class,
-                                    parentColumns = "id",
-                                    childColumns = "manager"),
-        indices = {@Index(value="manager", unique = true)})
+@IgnoreExtraProperties
 public class Team {
 
-    @PrimaryKey
     private Long id;
     private String name;
     private String stadium;
-    private String group;
-    private Long manager;
+    private String manager;
+    private Integer budget;
 
-    public Team(String name, String stadium, String group, Long manager) {
+    public Team(String name, String stadium, String manager) {
         Random rnd= new Random();
         this.id=rnd.nextLong() ;
         this.name = name;
         this.stadium = stadium;
-        this.group = group;
         this.manager = manager;
     }
 
-    @Ignore
+    public Team(String name, String stadium, String manager, Integer buget) {
+        Random rnd= new Random();
+        this.name = name;
+        this.stadium = stadium;
+        this.manager = manager;
+        this.budget = buget;
+    }
+
     public Team() {
     }
 
@@ -60,15 +58,8 @@ public class Team {
         this.stadium = stadium;
     }
 
-    public String getGroup() {
-        return group;
-    }
 
-    public void setGroup(String group) {
-        this.group = group;
-    }
-
-    public Long getManager() {
+    public String getManager() {
         return manager;
     }
 
@@ -76,8 +67,16 @@ public class Team {
         this.id = id;
     }
 
-    public void setManager(Long manager) {
+    public void setManager(String manager) {
         this.manager = manager;
+    }
+
+    public Integer getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Integer budget) {
+        this.budget = budget;
     }
 
     @Override
@@ -85,7 +84,6 @@ public class Team {
         return "Team{" +
                 "name='" + name + '\'' +
                 ", stadium='" + stadium + '\'' +
-                ", group='" + group + '\'' +
                 ", manager=" + manager +
                 '}';
     }

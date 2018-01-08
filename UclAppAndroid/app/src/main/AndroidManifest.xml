@@ -24,6 +24,9 @@
         <activity android:name=".ListViewTeams">
 
         </activity>
+        <activity android:name=".BookTeam">
+
+        </activity>
     </application>
 
 </manifest>

@@ -3,15 +3,15 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/EmailPageButton"
+        android:id="@+id/AddTeamButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/send_email" />
+        android:text="@string/add_team" />
+
     <ListView
         android:id="@+id/TeamsListView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/EmailPageButton"
-        android:stackFromBottom="true"></ListView>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stackFromBottom="true" />
 </RelativeLayout>

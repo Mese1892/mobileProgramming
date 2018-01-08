@@ -8,16 +8,5 @@
         android:layout_height="wrap_content"
         android:text="@string/teamlabel"
         android:textSize="75px"/>
-    <!--<TextView-->
-        <!--android:id="@+id/stadiumlabel"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/stadiumlabel"-->
-        <!--android:layout_below="@+id/teamlabel"/>-->
-    <!--<TextView-->
-        <!--android:id="@+id/managerlabel"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/managerlabel"-->
-        <!--android:layout_below="@+id/stadiumlabel"/>-->
+
 </RelativeLayout>

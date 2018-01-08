@@ -8,4 +8,14 @@
     <string name="someone_email_com">someone@email.com</string>
     <string name="e_mail">E-mail</string>
     <string name="favourite_teams">Favourite teams</string>
+    <string name="view_teams">View teams</string>
+    <string name="add_team">Add team</string>
+    <string name="delete_team">Delete</string>
+    <string name="update">Update</string>
+    <string name="book_your_team_to_watch">Book your team to watch</string>
+    <string name="book">Book</string>
+    <string name="buget">Buget</string>
+    <string name="email">Email</string>
+    <string name="log_in">Log In</string>
+    <string name="password">Password</string>
 </resources>
