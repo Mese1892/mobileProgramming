@@ -27,9 +27,22 @@
         android:id="@+id/book_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EmailButton"
+        android:layout_alignStart="@+id/EmailButton"
         android:layout_below="@+id/EmailButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="34dp"
         android:text="Book team" />
+
+    <Button
+        android:id="@+id/SignOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="68dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/ViewTeamsButton"
+        android:layout_toRightOf="@+id/ViewTeamsButton"
+        android:text="Sign Out" />
 
 </RelativeLayout>

@@ -3,39 +3,57 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/signInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="254dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/emailEditText"
+        android:layout_marginLeft="112dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="108dp"
         android:text="@string/log_in" />
 
     <TextView
         android:id="@+id/emailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button2"
+        android:layout_alignEnd="@+id/signInButton"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button2"
+        android:layout_alignRight="@+id/signInButton"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
         android:layout_marginTop="27dp"
         android:textSize="24sp"
         android:text="@string/email" />
+
     <TextView
         android:id="@+id/passwordView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/signInButton"
+        android:layout_alignRight="@+id/signInButton"
+        android:layout_below="@+id/emailText"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="69dp"
         android:text="@string/password"
-        android:textSize="24sp"/>
+        android:textSize="24sp" />
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordEdit"
+        android:layout_alignStart="@+id/passwordEdit"
+        android:layout_below="@+id/emailText" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/passwordEdit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/signInButton"
+        android:layout_alignStart="@+id/signInButton"
+        android:inputType="textPassword"
+        android:layout_below="@+id/passwordView" />
 </RelativeLayout>
