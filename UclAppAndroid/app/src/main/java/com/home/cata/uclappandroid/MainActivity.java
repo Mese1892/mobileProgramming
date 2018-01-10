@@ -29,20 +29,20 @@ public class MainActivity extends Activity {
         setContentView(R.layout.main_menu_layout);
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
+        database=FirebaseDatabase.getInstance();
+        userDB = database.getReference().child("users");
 
-        //userDB = database.getReference().child("users");
+        userDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                role = dataSnapshot.getValue(String.class);
+            }
 
-//        userDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                role = dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         Button viewTeams = (Button) findViewById(R.id.ViewTeamsButton);
         Button sendEmail = (Button) findViewById(R.id.EmailButton);
@@ -68,12 +68,12 @@ public class MainActivity extends Activity {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // if(!role.equals("admin")){
+                if(!role.equals("admin")){
                     Intent i = new Intent(MainActivity.this, BookTeam.class);
                     startActivity(i);
-                //}else{
-                  //  Toast.makeText(MainActivity.this, "Not available as admin", Toast.LENGTH_SHORT).show();
-                //}
+                }else{
+                    Toast.makeText(MainActivity.this, "Not available as admin", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

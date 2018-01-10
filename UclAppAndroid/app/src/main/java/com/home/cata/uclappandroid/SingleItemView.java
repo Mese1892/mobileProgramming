@@ -170,7 +170,7 @@ public class SingleItemView extends Activity {
 
             Team team = new Team(name, stadium, manager, budget);
             databaseReference.child("teams").child(team.getName()).setValue(team);
-            android.support.v4.app.NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+            NotificationCompat.Builder builder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                     .setSmallIcon(R.drawable.champions)
                     .setContentTitle("UCLAPP").setContentText("Team saved!");
             int notific=001;
